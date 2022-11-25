@@ -1,0 +1,40 @@
+----------------------------------------------------------------------------
+Analyse des besoins en données de l'application de carnet d'adresses Nestor.
+----------------------------------------------------------------------------
+
+Liste des entités et de leurs caractéristiques : 
+------------------------------------------------
+
+--------------
+1) utilisateur
+--------------
+  a) id : identifiant de l'utilisateur, nombre entier (moyen), obligatoire, 
+            généré automatiquement.
+  b) nom_complet : chaîne de caractères (100), obligatoire.
+  c) courriel : adresse de courriel utilisée pour ouvrir une connexion, 
+            chaîne de caractères de longueur variable (max: 100 caractères), 
+            obligatoire, unique !
+  d) mdp : mot de passe, chaîne de caractères de longueur fixe (exactement 
+            128 caractères obtenue en encryptant le mot de passe choisi par 
+            un utilisateur), obligatoire.
+  e) dcc : date de création du compte, optionnel.
+
+----------
+2) contact
+----------
+  a) id : identifiant du contact, nombre entier (int), obligatoire, 
+            généré automatiquement.
+  b) prenom : chaîne de caractères (50), optionnel.
+  c) nom : chaîne de caractères (50), optionnel.
+  d) utilisateur_id : référence à un identifiant d'un utilisateur.
+
+------------
+3) telephone
+------------
+  a) id : identifiant du téléphone, nombre entier (int), obligatoire, 
+            généré automatiquement.
+  b) numero : chaîne de caractères (25), optionnel.
+  c) poste : chaîne de caractères (10), optionnel.
+  d) type : enumération : 'Domicile', 'Cellulaire', 'Bureau', 'Autre', 
+            obligatoire, valeur par défaut : 'Cellulaire'.
+  e) contact_id : référence à un identifiant d'un contact.
